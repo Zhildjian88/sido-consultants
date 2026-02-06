@@ -122,6 +122,7 @@
             cursor: pointer;
         }
 
+        /* DO NOT CHANGE LOGO SIZE (as requested) */
         .logo {
             height: 56px;
             width: auto;
@@ -155,9 +156,13 @@
             color: var(--accent-cyan);
         }
 
-        /* Hero Section */
+        /* Hero Section (Updated: fills first screen more cleanly while keeping header unchanged) */
         .hero {
-            padding: 6rem 2rem;
+            min-height: calc(100vh - 120px);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             background: transparent;
             border-bottom: 1px solid var(--border-color);
@@ -344,6 +349,10 @@
             font-size: 0.9rem;
         }
 
+        footer p {
+            margin: 0;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             :root {
@@ -360,6 +369,10 @@
 
             .hero::before {
                 display: none;
+            }
+
+            .hero {
+                min-height: calc(100vh - 95px);
             }
 
             .hero h2 {
@@ -422,6 +435,7 @@
                 color: var(--accent-cyan);
             }
 
+            /* DO NOT CHANGE LOGO SIZE (as requested) */
             .logo {
                 height: 48px;
             }
@@ -429,6 +443,7 @@
             header {
                 padding: calc(1.5rem - 1px) 0;
             }
+
             footer {
                 padding: 1.0rem;
             }
