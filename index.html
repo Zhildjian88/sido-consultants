@@ -30,13 +30,21 @@
             background-color: var(--dark-bg);
             background-image: url('background.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-attachment: fixed;
             background-repeat: no-repeat;
             color: var(--light-text);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
             position: relative;
+            min-height: 100vh;
+        }
+
+        /* iOS/Safari fix for background */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                background-attachment: scroll;
+            }
         }
 
         body::before {
@@ -311,7 +319,7 @@
             }
 
             body::before {
-                background: rgba(15, 23, 42, 0.25);
+                background: rgba(15, 23, 42, 0.15);
             }
 
             h1 {
