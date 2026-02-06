@@ -75,6 +75,12 @@
             align-items: center;
         }
 
+        .logo-container a {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
         .logo {
             height: 54px;
             width: auto;
@@ -273,7 +279,7 @@
         }
 
         .contact-info a {
-            color: var(--accent-cyan);
+            color: #6366f1;
             text-decoration: none;
             font-size: 1.25rem;
             font-weight: 500;
@@ -281,7 +287,7 @@
         }
 
         .contact-info a:hover {
-            color: var(--primary-purple);
+            color: var(--accent-cyan);
         }
 
         /* Footer */
@@ -298,6 +304,10 @@
         @media (max-width: 768px) {
             body {
                 background-attachment: scroll;
+            }
+
+            body::before {
+                background: rgba(15, 23, 42, 0.75);
             }
 
             h1 {
@@ -378,7 +388,9 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <img src="logo.png" alt="SiDO Consultants" class="logo">
+                <a href="#" onclick="scrollToTop(event)">
+                    <img src="logo.png" alt="SiDO Consultants" class="logo">
+                </a>
             </div>
             <nav>
                 <a href="#what-we-do">What We Do</a>
@@ -490,6 +502,14 @@
     </footer>
 
     <script>
+        function scrollToTop(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
         function toggleMenu() {
             const mobileNav = document.getElementById('mobileNav');
             mobileNav.classList.toggle('active');
