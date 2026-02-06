@@ -226,10 +226,10 @@
 
         /* How We Work - Special Styling */
         .work-principles {
-            background: var(--medium-bg);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 1px solid var(--border-color);
             padding: 2rem;
             border-radius: 8px;
-            border: 1px solid var(--border-color);
             margin: 2rem 0;
         }
 
@@ -238,7 +238,8 @@
         }
 
         .protection-notice {
-            background: rgba(6, 182, 212, 0.1);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 1px solid var(--border-color);
             border-left: 3px solid var(--accent-cyan);
             padding: 1.25rem 1.5rem;
             margin: 2rem 0;
@@ -307,7 +308,7 @@
             }
 
             body::before {
-                background: rgba(15, 23, 42, 0.75);
+                background: rgba(15, 23, 42, 0.5);
             }
 
             h1 {
@@ -316,6 +317,10 @@
 
             .hero {
                 background-attachment: scroll;
+            }
+
+            .hero::before {
+                background: rgba(15, 23, 42, 0.1);
             }
 
             .hero h2 {
