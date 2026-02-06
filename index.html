@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SiDO Consultants - Independent advisory firm focused on data analytics, risk decision-making, and AI governance for organizations navigating complexity.">
+    <title>SiDO Consultants | Data Analytics, Risk & AI Governance Advisory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #6366f1;
+            --accent-cyan: #06b6d4;
+            --dark-bg: #0f172a;
+            --medium-bg: #1e293b;
+            --light-text: #e2e8f0;
+            --muted-text: #94a3b8;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--medium-bg) 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        nav a {
+            color: var(--muted-text);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--medium-bg) 0%, var(--dark-bg) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--muted-text);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .subtext {
+            font-size: 0.9rem;
+            color: var(--muted-text);
+            font-weight: 300;
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        section:not(:last-of-type) {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--light-text);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--muted-text);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        /* List Styles */
+        ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        ul li {
+            font-size: 1.05rem;
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "•";
+            color: var(--accent-cyan);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1.05rem;
+        }
+
+        /* How We Work - Special Styling */
+        .work-principles {
+            background: var(--medium-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 2rem 0;
+        }
+
+        .work-principles ul li {
+            font-weight: 500;
+        }
+
+        .protection-notice {
+            background: rgba(6, 182, 212, 0.1);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            font-size: 1rem;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+
+        /* AI Governance Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .contact-info a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-purple);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--medium-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--muted-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.25rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="SiDO Consultants" class="logo">
+            </div>
+            <nav>
+                <a href="#what-we-do">What We Do</a>
+                <a href="#how-we-work">How We Work</a>
+                <a href="#areas-of-focus">Focus Areas</a>
+                <a href="#ai-governance">AI Governance</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SiDO Consultants</h1>
+            <h2>Data Analytics, Risk & AI Governance Advisory</h2>
+            <p>We design data-driven decision frameworks and governance structures for organisations operating in complex environments.</p>
+            <p class="subtext">Independent advisory | Analytics-led | Non-statutory</p>
+        </div>
+    </section>
+
+    <section id="what-we-do">
+        <h3>What We Do</h3>
+        <p>SiDO Consultants supports founders, executives, and leadership teams by designing analytics-informed frameworks that improve oversight, accountability, and decision quality.</p>
+        
+        <p style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600; color: var(--light-text);">Our work includes:</p>
+        <ul>
+            <li>Risk and decision analytics</li>
+            <li>Fraud and anomaly analytics (sector-neutral)</li>
+            <li>Operational and control analytics</li>
+            <li>AI governance and oversight frameworks</li>
+            <li>Executive decision support using data and analytics</li>
+        </ul>
+    </section>
+
+    <section id="how-we-work">
+        <h3>How We Work</h3>
+        <p>We engage during early-stage, transition, or high-uncertainty phases where decisions are front-loaded and difficult to reverse.</p>
+        
+        <div class="work-principles">
+            <p style="margin-bottom: 1rem; font-weight: 600; color: var(--light-text);">Our engagements are:</p>
+            <ul>
+                <li>Advisory-led</li>
+                <li>Analytics-driven</li>
+                <li>Time-bound</li>
+                <li>Non-statutory and non-executive</li>
+            </ul>
+        </div>
+
+        <div class="protection-notice">
+            We do not act as management, auditors, regulators, or compliance officers.
+        </div>
+    </section>
+
+    <section id="areas-of-focus">
+        <h3>Areas of Focus</h3>
+        
+        <div class="two-column">
+            <ul>
+                <li>Data-driven risk and control design</li>
+                <li>Fraud and behavioural analytics</li>
+                <li>Transaction and operational risk analytics</li>
+                <li>AI governance and oversight design</li>
+            </ul>
+            <ul>
+                <li>Model risk awareness and decision accountability</li>
+                <li>Governance and reporting frameworks</li>
+                <li>Cross-functional alignment between data, risk, and leadership</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="ai-governance">
+        <h3>AI Governance</h3>
+        
+        <div class="highlight-box">
+            <p>We support organisations in establishing practical governance for AI-enabled and data-driven systems.</p>
+            <p>This includes defining accountability, oversight, decision boundaries, and risk awareness around the use of analytical and AI-supported models.</p>
+            <p style="margin-bottom: 0;">Our focus is on governance design and decision control, not model development or regulatory representation.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h3>About</h3>
+        <p>SiDO Consultants is an independent advisory firm specialising in data analytics, risk decision-making, and AI governance.</p>
+        <p>We work with founders, executives, and leadership teams to design decision frameworks and governance structures that improve oversight and accountability in complex, high-stakes environments.</p>
+        <p>Our approach is analytics-driven, time-bound, and focused on real-world decision problems rather than generic reporting or technology implementation.</p>
+        <p style="font-size: 0.95rem; color: var(--muted-text); font-style: italic; margin-top: 2rem;">Professional credentials and engagement references available upon request.</p>
+    </section>
+
+    <section id="contact">
+        <div class="contact-info">
+            <h3>Contact</h3>
+            <p>For professional enquiries:</p>
+            <a href="mailto:contact@sidoconsultants.com">contact@sidoconsultants.com</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© SiDO Consultants. Independent advisory practice.</p>
+    </footer>
+</body>
+</html>
