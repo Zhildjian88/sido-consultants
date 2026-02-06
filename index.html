@@ -23,6 +23,7 @@
             --light-text: #e2e8f0;
             --muted-text: #94a3b8;
             --border-color: #334155;
+            --anchor-offset: 120px;
         }
 
         /* Background image layer (more reliable on iOS than CSS background-image) */
@@ -68,6 +69,10 @@
             background: rgba(15, 23, 42, 0.3);
             z-index: -1;
             pointer-events: none;
+        }
+
+        section[id] {
+            scroll-margin-top: var(--anchor-offset);
         }
 
         /* Header */
@@ -324,6 +329,10 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            :root {
+                --anchor-offset: 105px;
+            }
+
             body::before {
                 background: rgba(15, 23, 42, 0.15);
             }
