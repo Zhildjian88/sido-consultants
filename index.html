@@ -46,8 +46,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(15, 23, 42, 0.85);
-            z-index: -1;
+            background: rgba(15, 23, 42, 0.4);
+            z-index: 0;
+            pointer-events: none;
         }
 
         /* Header */
@@ -181,6 +182,8 @@
             margin: 0 auto;
             padding: 5rem 2rem;
             background: transparent;
+            position: relative;
+            z-index: 1;
         }
 
         section:not(:last-of-type) {
@@ -308,7 +311,7 @@
             }
 
             body::before {
-                background: rgba(15, 23, 42, 0.3);
+                background: rgba(15, 23, 42, 0.25);
             }
 
             h1 {
@@ -320,7 +323,7 @@
             }
 
             .hero::before {
-                background: rgba(15, 23, 42, 0);
+                display: none;
             }
 
             .hero h2 {
