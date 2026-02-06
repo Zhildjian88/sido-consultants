@@ -59,8 +59,23 @@
         }
 
         .logo {
-            height: 50px;
+            height: 54px;
             width: auto;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-nav {
+            display: none;
         }
 
         nav a {
@@ -80,10 +95,12 @@
         .hero {
             padding: 6rem 2rem;
             text-align: center;
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%), url('background.jpg');
+            background-color: var(--dark-bg);
+            background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-blend-mode: lighten;
             border-bottom: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
@@ -96,7 +113,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+            background: rgba(15, 23, 42, 0.3);
             z-index: 1;
         }
 
@@ -299,6 +316,41 @@
                 display: none;
             }
 
+            .menu-toggle {
+                display: block;
+            }
+
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--medium-bg);
+                border-bottom: 1px solid var(--border-color);
+                padding: 1rem 0;
+                z-index: 99;
+            }
+
+            .mobile-nav.active {
+                display: block;
+            }
+
+            .mobile-nav a {
+                display: block;
+                padding: 1rem 2rem;
+                color: var(--muted-text);
+                text-decoration: none;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .mobile-nav a:hover {
+                background: var(--dark-bg);
+                color: var(--accent-cyan);
+            }
+
             .logo {
                 height: 40px;
             }
@@ -319,6 +371,15 @@
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </nav>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#what-we-do" onclick="closeMenu()">What We Do</a>
+            <a href="#how-we-work" onclick="closeMenu()">How We Work</a>
+            <a href="#areas-of-focus" onclick="closeMenu()">Focus Areas</a>
+            <a href="#ai-governance" onclick="closeMenu()">AI Governance</a>
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
         </div>
     </header>
 
@@ -410,5 +471,27 @@
     <footer>
         <p>© SiDO Consultants. Independent advisory practice.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
