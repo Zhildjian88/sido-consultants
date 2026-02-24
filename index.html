@@ -12,9 +12,27 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SiDO Strategies",
-      "url": "https://sidosg.com/"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://sidosg.com/#organization",
+          "name": "SiDO Strategies",
+          "url": "https://sidosg.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sidosg.com/logo.png"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://sidosg.com/#website",
+          "url": "https://sidosg.com/",
+          "name": "SiDO Strategies",
+          "alternateName": "SiDO Strategies SG",
+          "publisher": { "@id": "https://sidosg.com/#organization" },
+          "inLanguage": "en-SG"
+        }
+      ]
     }
     </script>
 
